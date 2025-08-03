@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Tournament Calendar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏆 Sports Tournament Calendar</h1>
+            <p>Discover upcoming sports tournaments across various levels and sports</p>
+        </header>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label for="sport-filter">Sport:</label>
+                <select id="sport-filter">
+                    <option value="">All Sports</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="level-filter">Level:</label>
+                <select id="level-filter">
+                    <option value="">All Levels</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <button id="filter-btn">Filter</button>
+                <button id="clear-filters">Clear</button>
+            </div>
+        </div>
+
+        <div class="export-section">
+            <button id="export-csv">Export CSV</button>
+            <button id="export-json">Export JSON</button>
+        </div>
+
+        <div class="tournament-grid" id="tournament-grid">
+            <!-- Tournaments will be loaded here -->
+        </div>
+
+        <div class="loading" id="loading" style="display: none;">
+            Loading tournaments...
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
